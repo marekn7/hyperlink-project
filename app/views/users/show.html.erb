@@ -1,0 +1,19 @@
+<h1>Home#show</h1>
+
+<p>Find me in app/views/home/show.html.erb</p>
+
+<h3>Create new user:</h3>
+
+  <%= form_for @user1 do |f| %>
+    <table>
+      <td>Name:</td>
+      <td><%= f.text_field :name %></td>
+      <td>Age:</td>
+      <td><%= f.text_field :age %></td>
+      <td>Description:</td>
+      <td><%= f.text_field :description %></td>
+      <td>Email:</td>
+      <td><%= f.text_field :email %></td>
+      <td><%= f.submit %></td>
+    </table>
+  <% end %>

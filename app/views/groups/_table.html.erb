@@ -1,0 +1,19 @@
+<h3>Groups:</h3>
+
+  <% @group.each do |group| %>
+
+      <table>
+        <td>Name:</td>
+        <td><%= group.name %></td>
+        <td>Member:</td>
+        <td><%= group.member %></td>
+        <td>Popularity:</td>
+        <td><%= group.popularity %></td>
+        <td>Description:</td>
+        <td><%= group.description %></td>
+        <td><%= link_to '[show]', group_path(group.id) %></td>
+        <td><%= link_to '[edit]', edit_group_path(group.id) %></td>
+        <strong><td><%= link_to '[destroy]', group_path(group.id), method: :delete %></td></strong>
+      </table>
+
+  <% end %>

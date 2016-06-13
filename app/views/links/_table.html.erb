@@ -1,0 +1,18 @@
+<h3>Links:</h3>
+
+  <% @link.each do |link| %>
+    <table>
+
+      <td>Name:</td>
+      <td><%= link.name %></td>
+      <td>Popularity:</td>
+      <td><%= link.popularity %></td>
+      <td>Description:</td>
+      <td><%= link.description %></td>
+      <td>Source:</td>
+      <td><%= link.source %></td>
+      <td><%= link_to '[show]', link_path(link.id) %></td>
+      <td><%= link_to '[edit]', edit_link_path(link.id) %></td>
+      <td><%= link_to '[destroy]', link_path(link.id), method: :delete %></td>
+    </table>
+  <% end %>
