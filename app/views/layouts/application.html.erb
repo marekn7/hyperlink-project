@@ -12,7 +12,7 @@
 <p class="alert"><%= alert %></p>
 <%= link_to "Sign Up", new_member_registration_path %>
 <%= link_to "Sign In", new_member_session_path %>
-<%= link_to "Sign Out", destroy_member_session_path %>#nejde
+<%= link_to "Sign Out", destroy_member_session_path, :method => :delete %>
 <%= yield %>
 
 </body>
