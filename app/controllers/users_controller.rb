@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+  before_action :authenticate_member!, except: [:index, :show]
+
   def index
     @user = User.all
   end
 
   def new
-    @user = User.new
+    @user = current_member.users.build
   end
 
   def show
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = current_member.users.build(user_params)
 
     if @user.save
       redirect_to users_path
